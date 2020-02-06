@@ -1,6 +1,5 @@
 package com.bookpurple.nocca_admin.mvp.interfaces;
 
-import com.bookpurple.nocca_admin.mvp.DeviceResponseModel;
 import com.bookpurple.nocca_admin.mvp.NewDeviceRequest;
 import com.bookpurple.nocca_admin.mvp.core.MvpBasePresenterV2;
 

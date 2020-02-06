@@ -15,7 +15,6 @@ import com.bookpurple.nocca_admin.dagger.component.ModuleComponent;
 import com.bookpurple.nocca_admin.dagger.provider.ComponentProvider;
 import com.bookpurple.nocca_admin.logger.Logger;
 import com.bookpurple.nocca_admin.mvp.DeviceRequestModel;
-import com.bookpurple.nocca_admin.mvp.DeviceResponseModel;
 import com.bookpurple.nocca_admin.mvp.NewDeviceRequest;
 import com.bookpurple.nocca_admin.mvp.interactor.DeviceEnrolInteractor;
 import com.bookpurple.nocca_admin.mvp.interfaces.DeviceEnrolPresenterContract;
