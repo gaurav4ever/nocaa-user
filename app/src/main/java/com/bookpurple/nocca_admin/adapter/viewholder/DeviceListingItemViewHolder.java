@@ -42,7 +42,11 @@ public class DeviceListingItemViewHolder extends DeviceListingViewHolder<DeviceD
 
     @Override
     public void bindData(DeviceDetails item, int position) {
-        deviceTextView.setText(item.deviceName);
+        if (null != item.deviceName) {
+            deviceTextView.setText(item.deviceName);
+        } else {
+            deviceTextView.setText(item.deviceId);
+        }
 
         RxViewUtil.click(deviceTextView)
                 .subscribe(aVoid -> {

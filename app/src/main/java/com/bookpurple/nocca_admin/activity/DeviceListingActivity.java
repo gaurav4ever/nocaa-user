@@ -116,9 +116,12 @@ public class DeviceListingActivity extends AppCompatActivity implements DeviceLi
 
     private void initPayment(DeviceClickedItem deviceClickedItem) {
         if (deviceClickedItem.status == 0) {
+            builder = new AlertDialog.Builder(this);
             builder.setMessage("Your device has been disabled")
                     .setTitle("You cannot initiate payment.")
                     .create();
+            AlertDialog alert = builder.create();
+            alert.show();
         } else {
             // start payment activity
             Intent intent = new Intent(getApplicationContext(), PaymentActivity.class);
