@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
 
-
 import com.bookpurple.nocca_admin.R;
 import com.bookpurple.nocca_admin.constant.Constant;
 import com.bookpurple.nocca_admin.logger.Logger;
@@ -25,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText panEditText;
     private Button button;
+    private Button enrollButton;
 
     // Rx Related Variables
     private CompositeDisposable compositeDisposable;
@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         panEditText = findViewById(R.id.pan);
         button = findViewById(R.id.submit);
+        enrollButton = findViewById(R.id.newDeviceButton);
         addClickObservables();
         registerToClickObservables();
     }
@@ -56,6 +57,17 @@ public class MainActivity extends AppCompatActivity {
                     deviceRequestModel.panNumber = panEditText.getText().toString();
                     loginButtonPublishSubject.onNext(deviceRequestModel);
                 }, throwable -> Logger.logException(TAG, throwable));
+
+        RxViewUtil.click(enrollButton)
+                .subscribe(aVoid -> {
+                    // start enroll device activity
+                    startEnrollDeviceActivity();
+                }, throwable -> Logger.logException(TAG, throwable));
+    }
+
+    private void startEnrollDeviceActivity() {
+        Intent intent = new Intent(getApplicationContext(), EnrolDeviceActivity.class);
+        startActivity(intent);
     }
 
 

@@ -1,5 +1,6 @@
 package com.bookpurple.nocca_admin.dagger.module;
 
+import com.bookpurple.nocca_admin.mvp.interactor.DeviceEnrolInteractor;
 import com.bookpurple.nocca_admin.mvp.interactor.DeviceListingInteractor;
 import com.bookpurple.nocca_admin.network.api.ServiceApi;
 import com.bookpurple.nocca_admin.util.rx.RxSchedulers;
@@ -22,6 +23,12 @@ public class MainModule {
     @Singleton
     public DeviceListingInteractor getDeviceDetailsListingInteractor(@Named("serviceApi") ServiceApi serviceApi) {
         return new DeviceListingInteractor(serviceApi);
+    }
+
+    @Provides
+    @Singleton
+    public DeviceEnrolInteractor getDeviceEnrolInteractor(@Named("serviceApi") ServiceApi serviceApi) {
+        return new DeviceEnrolInteractor(serviceApi);
     }
 
     @Provides

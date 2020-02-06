@@ -2,7 +2,6 @@ package com.bookpurple.nocca_admin.adapter.viewholder;
 
 import android.content.Context;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.bookpurple.nocca_admin.R;

@@ -43,11 +43,9 @@ public class DeviceListingActivity extends AppCompatActivity implements DeviceLi
     public RxSchedulersAbstractBase rxSchedulers;
     @Inject
     public DeviceListingInteractor interactor;
-
-    AlertDialog.Builder builder;
-
     // Dagger related variables
     protected ModuleComponent component;
+    AlertDialog.Builder builder;
     // Rx Related Variables
     private CompositeDisposable lifecycle;
     private DeviceListingPresenter deviceListingPresenter;
@@ -119,8 +117,8 @@ public class DeviceListingActivity extends AppCompatActivity implements DeviceLi
     private void initPayment(DeviceClickedItem deviceClickedItem) {
         if (deviceClickedItem.status == 0) {
             builder.setMessage("Your device has been disabled")
-            .setTitle("You cannot initiate payment.")
-            .create();
+                    .setTitle("You cannot initiate payment.")
+                    .create();
         } else {
             // start payment activity
             Intent intent = new Intent(getApplicationContext(), PaymentActivity.class);

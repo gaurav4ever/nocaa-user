@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
 import com.bookpurple.nocca_admin.R;
 import com.bookpurple.nocca_admin.adapter.viewholder.DeviceListingItemViewHolder;
 import com.bookpurple.nocca_admin.adapter.viewholder.DeviceListingViewHolder;
@@ -70,11 +69,11 @@ public class DeviceListingAdapter extends RecyclerView.Adapter<DeviceListingView
         return deviceDetails.size();
     }
 
-    public PublishSubject<DeviceClickedItem> getDeviceClickedItemPublishSubject () {
+    public PublishSubject<DeviceClickedItem> getDeviceClickedItemPublishSubject() {
         return this.deviceClickedItemPublishSubject;
     }
 
-    public PublishSubject<DeviceClickedItem> getDeviceStatusClickedItemPublishSubject () {
+    public PublishSubject<DeviceClickedItem> getDeviceStatusClickedItemPublishSubject() {
         return this.deviceStatusClickedItemPublishSubject;
     }
 }
