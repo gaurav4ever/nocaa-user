@@ -76,7 +76,8 @@ public class DeviceListingActivity extends AppCompatActivity implements DeviceLi
                 finish();
             } else {
                 deviceRequestModel = interactor
-                        .createDeviceRequestModel(bundle.getString(Constant.ParcelConstant.DEVICE_LISTING_REQUEST_MODEL));
+                        .createDeviceRequestModel(bundle.getString(Constant.ParcelConstant.DEVICE_LISTING_REQUEST_MODEL),
+                                bundle.getString(Constant.ParcelConstant.EMAIL_LISTING_REQUEST_MODEL));
             }
         }
     }

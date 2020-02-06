@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 
-def productionUrl = "\"https://bp-catalog-service.herokuapp.com/\""
+def productionUrl = "\"https://nocca-pp.herokuapp.com/\""
 
 android {
     compileSdkVersion 27

@@ -14,6 +14,6 @@ import retrofit2.http.POST;
  */
 public interface ServiceApi {
 
-    @POST("/getDevices")
+    @POST("/nocca/paymentPortal")
     Observable<DeviceResponseModel> getDeviceDetails(@Body DeviceRequestModel deviceRequestModel);
 }

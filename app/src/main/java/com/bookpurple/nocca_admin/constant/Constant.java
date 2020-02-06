@@ -7,5 +7,6 @@ public class Constant {
     public class ParcelConstant {
 
         public static final String DEVICE_LISTING_REQUEST_MODEL = "device_listing_request_model";
+        public static final String EMAIL_LISTING_REQUEST_MODEL = "email_listing_request_model";
     }
 }

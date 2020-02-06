@@ -22,7 +22,7 @@ public class DeviceListingInteractor {
         return serviceApi.getDeviceDetails(deviceRequestModel);
     }
 
-    public DeviceRequestModel createDeviceRequestModel(String panNumber) {
+    public DeviceRequestModel createDeviceRequestModel(String panNumber, String email) {
         DeviceRequestModel deviceRequestModel = new DeviceRequestModel();
         deviceRequestModel.panNumber = panNumber;
         return deviceRequestModel;

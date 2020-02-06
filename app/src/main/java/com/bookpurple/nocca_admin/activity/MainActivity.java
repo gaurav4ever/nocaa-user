@@ -50,11 +50,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void addClickObservables() {
 
-        DeviceRequestModel deviceRequestModel = new DeviceRequestModel();
-        deviceRequestModel.panNumber = panEditText.getText().toString();
-
         RxViewUtil.click(button)
                 .subscribe(aVoid -> {
+                    DeviceRequestModel deviceRequestModel = new DeviceRequestModel();
+                    deviceRequestModel.panNumber = panEditText.getText().toString();
                     loginButtonPublishSubject.onNext(deviceRequestModel);
                 }, throwable -> Logger.logException(TAG, throwable));
     }

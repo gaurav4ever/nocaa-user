@@ -24,7 +24,6 @@ public class DeviceListingItemViewHolder extends DeviceListingViewHolder<DeviceD
     private PublishSubject<DeviceClickedItem> deviceStatusClickedItemPublishSubject;
 
     private TextView deviceTextView;
-    private CheckBox deviceStatusCheckBox;
 
     public DeviceListingItemViewHolder(Context context,
                                        View itemView,
@@ -45,10 +44,6 @@ public class DeviceListingItemViewHolder extends DeviceListingViewHolder<DeviceD
     @Override
     public void bindData(DeviceDetails item, int position) {
         deviceTextView.setText(item.deviceName);
-        deviceStatusCheckBox.setChecked(false);
-        if (item.status == 1) {
-            deviceStatusCheckBox.setChecked(true);
-        }
 
         RxViewUtil.click(deviceTextView)
                 .subscribe(aVoid -> {
@@ -56,15 +51,6 @@ public class DeviceListingItemViewHolder extends DeviceListingViewHolder<DeviceD
                     deviceClickedItem.deviceId = item.deviceId;
                     deviceClickedItem.status = item.status;
                     deviceClickedItemPublishSubject.onNext(deviceClickedItem);
-                }, throwable -> Logger.logException(throwable));
-
-        RxViewUtil.click(deviceStatusCheckBox)
-                .subscribe(aVoid -> {
-                    final DeviceClickedItem deviceClickedItem = new DeviceClickedItem();
-                    deviceClickedItem.deviceId = item.deviceId;
-                    deviceClickedItem.status = item.status;
-                    deviceClickedItem.tokenId = item.tokenId;
-                    deviceStatusClickedItemPublishSubject.onNext(deviceClickedItem);
                 }, throwable -> Logger.logException(throwable));
     }
 }

@@ -7,6 +7,6 @@ import com.google.gson.annotations.SerializedName;
  */
 public class DeviceRequestModel {
 
-    @SerializedName("panNumber")
+    @SerializedName("panNo")
     public String panNumber;
 }
